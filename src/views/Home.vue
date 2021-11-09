@@ -13,17 +13,23 @@
 <style></style>
 
 <script>
+const axios = require("axios");
 export default {
   data: function () {
     return {
       message: "Welcome to the end!",
-      products: [
-        { id: 1, name: "Product 1", price: 10 },
-        { id: 2, name: "Product 2", price: 230 },
-      ],
+      products: [],
     };
   },
-  created: function () {},
-  methods: {},
+  created: function () {
+    this.indexProducts();
+  },
+  methods: {
+    indexProducts: function () {
+      axios.get("http://localhost:3000/products").then((response) => {
+        this.products = response.data;
+      });
+    },
+  },
 };
 </script>
