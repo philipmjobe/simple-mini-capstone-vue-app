@@ -5,7 +5,7 @@
     </h1>
     <h2>New Product</h2>
     Name:
-    <input type="text" v-model="newProductParams.title" />
+    <input type="text" v-model="newProductParams.name" />
     Description:
     <input type="text" v-model="newProductParams.description" />
     Price:
