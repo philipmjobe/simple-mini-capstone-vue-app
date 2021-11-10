@@ -34,6 +34,10 @@
           Price:
           <input type="text" v-model="currentProduct.price" />
         </p>
+        <p>
+          Image Url:
+          <input type="text" v-model="currentProduct.image_url" />
+        </p>
         <button v-on:click="updateProduct(currentProduct)">Update Product</button>
         <button>close</button>
       </form>
