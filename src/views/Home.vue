@@ -17,7 +17,17 @@
       <h3>{{ product.name }}</h3>
       <p>{{ product.price }}</p>
       <img :src="product.image_url" :alt="product.name" />
+      <button v-on:click="showProduct(product)">More Info</button>
     </div>
+    <dialog id="product-details">
+      <form method="dialog">
+        <h1>Product Info:</h1>
+        <p>Name: ...</p>
+        <p>Description: ...</p>
+        <p>Price: ...</p>
+        <button>close</button>
+      </form>
+    </dialog>
   </div>
 </template>
 
@@ -56,6 +66,10 @@ export default {
           this.product.push(response.data);
         })
         .catch((error) => console.log(error.response));
+    },
+    showProduct: function (product) {
+      console.log(product);
+      document.querySelector("#product-details").showModal();
     },
   },
 };
