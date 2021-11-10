@@ -47,6 +47,10 @@
 </template>
 
 <style>
+#app {
+  background-color: rgb(1, 6, 7);
+  color: rgb(155, 25, 25);
+}
 img {
   width: 250px;
 }
